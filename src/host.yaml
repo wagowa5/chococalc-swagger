@@ -1,0 +1,193 @@
+openapi: 3.0.0
+
+info:
+  title: チョコットランド計算機(非公式)
+  description: |
+    チョコットランド計算機 - 中間サーバ間通信のAPI仕様  
+  version: 1.0.0
+
+externalDocs:
+  url: https://www.google.com/?hl=ja
+  description: 設計資料(何か作ったらここにリンク貼る)
+
+servers:
+  - url: https://choco.calc.jp
+    description: 本番API
+  - url: https://stg.choco.calc.jp
+    description: ステージングAPI
+
+paths:
+  # user操作
+  /api/user:
+    $ref: "operations/user/user.yaml"
+  
+  # TODO ステータス振り分け, ロイヤル, ヘアメイクステ
+  # 職業操作
+  /api/user/job:
+    $ref: "operations/job/job.yaml"
+
+  # 魔獣缶・シール
+  /api/item/can:
+    $ref: "operations/item/can/can.yaml"
+
+  # ビタ
+  /api/item/vita/all:
+    $ref: "operations/item/vita/all.yaml"
+  /api/item/vita/pow:
+    $ref: "operations/item/vita/pow.yaml"
+  /api/item/vita/int:
+    $ref: "operations/item/vita/int.yaml"
+  /api/item/vita/spd:
+    $ref: "operations/item/vita/spd.yaml"
+  /api/item/vita/vit:
+    $ref: "operations/item/vita/vit.yaml"
+  /api/item/vita/luk:
+    $ref: "operations/item/vita/luk.yaml"
+  
+  # 巻物
+  #/api/item/scroll:
+  #  $ref: "operations/item/scroll/scroll.yaml"
+
+  # リキッド
+  /api/item/liquid/atk:
+    $ref: "operations/item/liquid/atk.yaml"
+  /api/item/liquid/def:
+    $ref: "operations/item/liquid/def.yaml"
+  /api/item/liquid/mat:
+    $ref: "operations/item/liquid/mat.yaml"
+  /api/item/liquid/mdf:
+    $ref: "operations/item/liquid/mdf.yaml"
+  
+  # 特殊スキル
+  # /api/skill/special/eru:
+  #   $ref: "operations/skill/special/eru.yaml"
+  # /api/skill/special/fairyP:
+  #   $ref: "operations/skill/special/fairyP.yaml"
+  # /api/skill/special/fairyM:
+  #   $ref: "operations/skill/special/fairyM.yaml"
+  # /api/skill/special/bene:
+  #   $ref: "operations/skill/special/bene.yaml" 
+  # /api/skill/special/fis:
+  #   $ref: "operations/skill/special/fis.yaml"
+  # /api/skill/special/sira:
+  #   $ref: "operations/skill/special/sira.yaml"
+  # /api/skill/special/retro:
+  #   $ref: "operations/skill/special/retro.yaml"
+
+  # # 通常スキル
+  # /api/skill/normal/bradscraper:
+  #   $ref: "operations/skill/normal/bradscraper.yaml"
+
+  # TODO ペットスキルも追加する
+
+  # TODO 装備+アバのマネキンセットのAPIも作る
+  #/api/manekin:
+  #  get:
+  #    tags:
+  #      - manekin
+  #    summary: マネキン一覧取得
+  #  post:
+  #    tags:
+  #      - manekin
+  #    summary: マネキン登録
+  #  put:
+  #    tags:
+  #      - manekin
+  #    summary: マネキン修正
+  #  delete:
+  #    tags:
+  #      - manekin
+  #    summary: マネキン削除
+  
+  #/api/manekin/{manekinName}:
+  #  get:
+  #    tags:
+  #      - manekin
+  #    summary: マネキン一覧取得
+
+  # マネキン
+  # /api/manekin/main:
+  #   $ref: "operations/manekin/main_manekin.yaml"
+  # /api/manekin/main/{manekinName}:
+  #   $ref: "operations/manekin/main_manekin_call.yaml"
+  # /api/manekin/sub:
+  #   $ref: "operations/manekin/sub_manekin.yaml"
+  # /api/manekin/sub/{manekinName}:
+  #   $ref: "operations/manekin/sub_manekin.yaml"
+  # /api/manekin/ava:
+  #   $ref: "operations/manekin/ava_manekin.yaml"
+  # /api/manekin/ava/{manekinName}:
+  #   $ref: "operations/manekin/ava_manekin_call.yaml"
+
+  # TODO 装備・アバ定義してからマネキン定義する
+  # 装備
+  # /api/equip/weapon:
+  #   $ref: "operations/equip/weapon.yaml"
+  # /api/equip/head:
+  #   $ref: "operations/equip/head.yaml"
+  # /api/equip/chest:
+  #   $ref: "operations/equip/chest.yaml"
+  # /api/equip/back:
+  #   $ref: "operations/equip/back.yaml"
+  # /api/equip/shield:
+  #   $ref: "operations/equip/shield.yaml"
+  # /api/equip/neck:
+  #   $ref: "operations/equip/neck.yaml"
+  # /api/equip/hand:
+  #   $ref: "operations/equip/hand.yaml"
+  # /api/equip/foot:
+  #   $ref: "operations/equip/foot.yaml"
+
+  # # TODO 部位ごとに追加する
+  # # アイテムバッグ
+  # /api/itembag/equip/weapon:
+  #   $ref: "operations/itembag/equip/weapon.yaml"
+  # /api/itembag/equip/head:
+  #   $ref: "operations/itembag/equip/head.yaml"
+  #/api/itembag/equip/chest:
+  #/api/itembag/equip/back:
+  #/api/itembag/equip/shield:
+  #/api/itembag/equip/neck:
+  #/api/itembag/equip/hand:
+  #/api/itembag/equip/foot:
+
+  # 錬成
+  #/api/core/phy:
+  #/api/core/mag:
+  #/api/core/special:
+
+  # アバター
+  #/api/avater:
+  #/api/avater/moitoi:
+  #/api/avater/tops:
+  #/api/avater/botoms:
+  #/api/avater/outer:
+  #/api/avater/hairstyle:
+  #/api/avater/cap:
+  #/api/avater/glass:
+  #/api/avater/accessory1:
+  #/api/avater/accessory2:
+  #/api/avater/merchandise1:
+  #/api/avater/merchandise2:
+  #/api/avater/other1:
+  #/api/avater/other2:
+  #/api/avater/other3:
+  #/api/avater/other4:
+  #/api/avater/pet1:
+  #/api/avater/pet2:
+  #/api/avater/pet3:
+  #/api/avater/pet4:
+  #/api/avater/background:
+  #/api/avater/effect:
+  #/api/avater/face:
+  
+  # 最適化
+  #/api/optimize/atk:
+  #/api/optimize/def:
+  #/api/optimize/mat:
+  #/api/optimize/mdf:
+  
+  # Admin
+  #/api/admin/login:
+  #/api/admin/db/equip:
+  #/api/admin/db/avater:

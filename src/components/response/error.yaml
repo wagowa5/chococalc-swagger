@@ -1,0 +1,52 @@
+components:
+  responses:
+    BadRequestError:
+      description: リクエスト不正エラー
+      content:
+        application/json:
+          schema:
+            $ref: "../model/error.yaml"
+
+    UnauthorizedError:
+      description: 認証エラー
+      content:
+        application/json:
+          schema:
+            $ref: "../model/error.yaml"
+
+    ForbiddenError:
+      description: アクセス拒否認証エラー
+      content:
+        application/json:
+          schema:
+            $ref: "../model/error.yaml"
+
+    RequestTimeoutError:
+      description: TimeOutエラー
+      content:
+        application/json:
+          schema:
+            $ref: "../model/error.yaml"
+
+    UpgradeRequiredError:
+      description: 強制アップグレードが必要な時に返却するエラー
+      content:
+        application/json:
+          schema:
+            $ref: "../model/error.yaml"
+
+    SystemError:
+      description: システムエラー
+      content:
+        application/json:
+          schema:
+            $ref: "../model/error.yaml"
+
+    MaintenanceError:
+      description: |
+        メンテナンス中エラー
+        アプリケーションサーバーから投げることはなく、メンテ時にELBのリスナールールで設定する
+      content:
+        application/json:
+          schema:
+            $ref: "../model/error.yaml"

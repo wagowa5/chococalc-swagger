@@ -1,0 +1,23 @@
+post:
+  tags:
+    - item
+  summary: マモールリキッドを使用
+  description: |
+    マモールリキッドを使用
+  security:
+    - bearerAuth: []
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "../../../components/response/character_info.yaml#/components/schemas/CharacterInfo"
+    "400":
+      $ref: "../../../components/response/error.yaml#/components/responses/BadRequestError"
+    "401":
+      $ref: "../../../components/response/error.yaml#/components/responses/UnauthorizedError"
+    "408":
+      $ref: "../../../components/response/error.yaml#/components/responses/RequestTimeoutError"
+    "500":
+      $ref: "../../../components/response/error.yaml#/components/responses/SystemError"

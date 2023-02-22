@@ -1,0 +1,52 @@
+# TODO ステータス振り分け, ロイヤル, ヘアメイクステ
+get:
+  tags:
+    - job
+  summary: 職業情報読み込み
+  security:
+    - bearerAuth: []
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/response/character_info.yaml#/components/schemas/CharacterInfo"
+    "400":
+      $ref: "../../components/response/error.yaml#/components/responses/BadRequestError"
+    "401":
+      $ref: "../../components/response/error.yaml#/components/responses/UnauthorizedError"
+    "408":
+      $ref: "../../components/response/error.yaml#/components/responses/RequestTimeoutError"
+    "500":
+      $ref: "../../components/response/error.yaml#/components/responses/SystemError"
+
+post:
+  tags:
+    - job
+  summary: 職業情報登録
+  security:
+    - bearerAuth: []
+  #parameters:
+  #  - $ref: "#/components/parameters/canType"
+  #requestBody:
+  #  content:
+  #    application/json:
+  #      schema:
+  #        $ref: "#/components/schemas/canType"
+  #  required: true
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "../../components/response/character_info.yaml#/components/schemas/CharacterInfo"
+    "400":
+      $ref: "../../components/response/error.yaml#/components/responses/BadRequestError"
+    "401":
+      $ref: "../../components/response/error.yaml#/components/responses/UnauthorizedError"
+    "408":
+      $ref: "../../components/response/error.yaml#/components/responses/RequestTimeoutError"
+    "500":
+      $ref: "../../components/response/error.yaml#/components/responses/SystemError"

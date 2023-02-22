@@ -1,0 +1,34 @@
+post:
+  tags:
+    - item
+  summary: 魔獣缶・シールを使用
+  description: |
+    魔獣缶・シールを使用
+  security:
+    - bearerAuth: []
+  # TODO コメント3
+  #parameters:
+  #  - $ref: "#/components/parameters/canType"
+  #requestBody:
+  #  content:
+  #    application/json:
+  #      schema:
+  #        $ref: "#/components/schemas/canType"
+  #  required: true
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "../../../components/response/character_info.yaml#/components/schemas/CharacterInfo"
+    "400":
+      $ref: "../../../components/response/error.yaml#/components/responses/BadRequestError"
+    "401":
+      $ref: "../../../components/response/error.yaml#/components/responses/UnauthorizedError"
+    "408":
+      $ref: "../../../components/response/error.yaml#/components/responses/RequestTimeoutError"
+    "500":
+      $ref: "../../../components/response/error.yaml#/components/responses/SystemError"
+    #"503":
+    #  $ref: "#/components/responses/MaintenanceError"

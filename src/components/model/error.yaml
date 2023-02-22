@@ -1,0 +1,26 @@
+title: Error
+type: object
+required:
+  - code
+  - link
+  - message
+properties:
+  code:
+    type: integer
+    format: int32
+  link:
+    type: string
+    description: ログサービスの該当エラーに対するリンク
+  message:
+    type: string
+  validationInfo:
+    type: array
+    description: バリデーション情報の配列
+    items:
+      $ref: "validation_info.yaml"
+  browserLink:
+    type: string
+    description: エラー時に案内するページのリンク
+  numberOfBackScreen:
+    type: integer
+    description: 何画面前に戻る必要があるか

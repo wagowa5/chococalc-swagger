@@ -1,0 +1,16 @@
+title: ValidationInfo
+type: object
+required:
+  - field
+  - rejectedValue
+  - message
+properties:
+  field:
+    type: string
+    description: 対象のフィールド名
+  rejectedValue:
+    type: string
+    description: 不正な入力値
+  message:
+    type: string
+    description: バリデーションメッセージ

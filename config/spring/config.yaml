@@ -1,0 +1,17 @@
+additionalProperties:
+  artifactId: org.openapitools.spring
+  packageName: org.openapitools.spring
+  serializableModel: "true"
+  dateLibrary: java8
+  groupId: org.openapitools.spring
+  apiPackage: org.openapitools.spring.apis
+  modelPackage: org.openapitools.spring.models
+  enablePostProcessFile: true
+  useBeanValidation: true
+  serializationLibrary: moshi
+  moshiCodeGen: true
+  enumPropertyNaming: UPPERCASE
+  sortParamsByRequiredFlag: true
+  sortModelPropertiesByRequiredFlag: true
+  requestDateConverter: toJson
+  reactive: false
